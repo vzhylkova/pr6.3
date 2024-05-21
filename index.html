@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Хто сказав мяу?</h1>
+    <form name="quiz">
+        <p>Варіанти відповідей</p>
+        <div class="answers">
+            <input type="button" value="собака" onclick="checkAnswer(this.value)">
+            <input type="button" value="кіт" onclick="checkAnswer(this.value)">
+            <input type="button" value="кінь" onclick="checkAnswer(this.value)">
+
+        </div>
+    </form>
+    <div id="result" class="result"></div>
+
+    <script>
+        function checkAnswer(answer) {
+            const resultDiv = document.getElementById('result');
+            if (answer === 'кіт') {
+                resultDiv.textContent = 'Правильно!';
+                resultDiv.style.color = 'green';
+            } else {
+                resultDiv.textContent = 'Неправильно, спробуйте ще раз.';
+                resultDiv.style.color = 'red';
+            }
+        }
+    </script>
+</body>
+</html>
